@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Math Game</h1>
+        
+        <div id="game-setup" class="game-section">
+            <div class="setting-section">
+                <h2>Difficulty Level</h2>
+                <div class="difficulty-selector">
+                    <div class="radio-group">
+                        <input type="radio" id="easy" name="difficulty" value="easy">
+                        <label for="easy">Easy</label>
+                        
+                        <input type="radio" id="medium" name="difficulty" value="medium" checked>
+                        <label for="medium">Medium</label>
+                        
+                        <input type="radio" id="hard" name="difficulty" value="hard">
+                        <label for="hard">Hard</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="setting-section">
+                <h2>Operations</h2>
+                <div class="operations-selector">
+                    <button class="operation-btn selected" data-operation="+">
+                        <span class="icon">+</span>
+                        <span>Addition</span>
+                    </button>
+                    <button class="operation-btn" data-operation="-">
+                        <span class="icon">−</span>
+                        <span>Subtraction</span>
+                    </button>
+                    <button class="operation-btn" data-operation="*">
+                        <span class="icon">×</span>
+                        <span>Multiplication</span>
+                    </button>
+                    <button class="operation-btn" data-operation="/">
+                        <span class="icon">÷</span>
+                        <span>Division</span>
+                    </button>
+                </div>
+            </div>
+            
+            <button id="start-game" class="btn primary">Start Game</button>
+        </div>
+        
+        <div id="game-play" class="game-section hidden">
+            <div class="game-header">
+                <div class="score">
+                    <span id="score">0</span>/<span id="total">0</span>
+                </div>
+                <div class="timer" id="timer">01:00</div>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="time-bar"></div>
+            </div>
+            
+            <div class="problem-display">
+                <div class="equation">
+                    <span id="num1">0</span>
+                    <span id="operation" class="operation-symbol">+</span>
+                    <span id="num2">0</span>
+                </div>
+            </div>
+            
+            <form id="answer-form" class="answer-form">
+                <div class="input-group">
+                    <label for="answer">Your Answer</label>
+                    <div class="input-with-button">
+                        <input type="number" id="answer" step="any" placeholder="Enter your answer" autofocus>
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="game-stats">
+                <div>
+                    <span class="label">Correct:</span>
+                    <span id="correct-count">0</span>
+                </div>
+                <div>
+                    <span class="label">Total:</span>
+                    <span id="total-count">0</span>
+                </div>
+                <div>
+                    <span class="label">Accuracy:</span>
+                    <span id="accuracy">0%</span>
+                </div>
+            </div>
+            
+            <button id="end-game" class="btn outline">End Game</button>
+        </div>
+        
+        <div id="toast" class="toast hidden"></div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
