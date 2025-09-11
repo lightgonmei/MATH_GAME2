@@ -78,6 +78,18 @@ h2 {
     text-align: center;
 }
 
+    /* Hover animation for difficulty labels */
+    .difficulty-selector label {
+        transition: background 0.3s, color 0.3s, transform 0.2s;
+    }
+
+    .difficulty-selector label:hover {
+        background-color: var(--secondary);
+        color: var(--primary);
+        transform: scale(1.05);
+        box-shadow: 0 2px 8px rgba(30, 41, 59, 0.08);
+    }
+
 .difficulty-selector input[type="radio"]:checked + label {
     background-color: var(--primary);
     color: var(--primary-foreground);
